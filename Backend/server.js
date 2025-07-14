@@ -4,7 +4,7 @@ const cors = require('cors');
 const connectDB  = require('./db');
 
 
-app.use(cors({ origin: 'http://localhost:3000'}));
+app.use(cors({ origin: 'https://lead-darshas-projects-feb79bd7.vercel.app/'}));
 app.use(express.json());
 
 connectDB();

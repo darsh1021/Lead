@@ -1,15 +1,15 @@
 // db.js
 const mongoose = require('mongoose');
-const UserData = require('./model/user_data'); // 👈 import model
+const UserData = require('./model/user_data');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb+srv://darshansalunke27:a0rFytWDid5oL26P@storage.arp1pw4.mongodb.net/Users', {
+        await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
         console.log('✅ MongoDB connected successfully');
-        
+
         const existing = await UserData.findOne({ email: 'darsh@gmail.com' });
         if (!existing) {
             await UserData.create({

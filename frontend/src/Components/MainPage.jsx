@@ -13,7 +13,7 @@ function MainPage() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/users');
+      const res = await fetch('https://lead-5kzn.onrender.com/users');
       const data = await res.json();
       // sort by points descending
       const sorted = data.sort((a, b) => b.points - a.points);
@@ -32,7 +32,7 @@ function MainPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/users', {
+      const response = await fetch('https://lead-5kzn.onrender.com/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email }),
@@ -55,7 +55,7 @@ function MainPage() {
     const randomPoints = Math.floor(Math.random() * 10) + 1;
 
     try {
-      const res = await fetch('http://localhost:5000/claim', {
+      const res = await fetch('https://lead-5kzn.onrender.com/claim', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, points: randomPoints })
