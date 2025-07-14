@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #1b1f3b, #2e2c6d);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+/* Header */
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  background: #282b8f;
+  padding: 20px 40px;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00f7ff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* User list container */
+.user-list {
+  list-style: none;
+  padding: 0;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Each user card */
+.user-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  border: 1px solid transparent;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px #00ffe7;
+  border-color: #00ffe7;
+}
+
+.user-card.selected {
+  background-color: rgba(0, 255, 247, 0.1);
+  border: 2px solid #00ffe7;
+}
+
+/* Claim Button */
+.claim-btn {
+  background: #00ff91;
+  border: none;
+  padding: 8px 16px;
+  color: black;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+.claim-btn:hover {
+  background: #00ffaa;
+}
+
+/* Animation for glowing */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 145, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 10px 10px rgba(0, 255, 145, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 145, 0);
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-add {
+  background: #4e4eff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 0 8px #4e4eff;
+}
+
+.btn-add:hover {
+  background: #6f6fff;
+}
+
+/* Popup form */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #2b2b3c;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 0 12px #00f0ff;
+}
+
+.popup-content h3 {
+  margin-top: 0;
+  color: #00f0ff;
+  text-align: center;
+}
+
+.popup-content input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-actions button {
+  padding: 8px 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.popup-actions button:first-child {
+  background-color: #00ff91;
+}
+
+.popup-actions button:last-child {
+  background-color: #ff4e4e;
+  color: white;
+}
